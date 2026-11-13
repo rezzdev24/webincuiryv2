@@ -1,0 +1,207 @@
+nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            box-shadow: 0 2px 10px #00000010;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #25eb25;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #25eb49;
+        }
+#data-sampah {
+    padding: 30px;
+    background: #f0fdf4;
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+}
+
+/* HEADER */
+#data-sampah .header-sampah {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#data-sampah .header-sampah h2 {
+    color: #166534;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+#data-sampah .header-sampah p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* PENCARIAN */
+#data-sampah .search-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#data-sampah .search-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    background: white;
+    border: 2px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 0 12px;
+}
+
+#data-sampah .search-input:focus-within {
+    border-color: #16a34a;
+}
+
+#data-sampah .search-input input {
+    width: 100%;
+    padding: 13px 0;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+}
+
+/* TOMBOL RESET */
+#data-sampah #resetCari {
+    background: #15803d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#data-sampah #resetCari:hover {
+    background: #14532d;
+}
+
+/* INFORMASI HASIL */
+#data-sampah #infoHasil {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+/* TABEL */
+#data-sampah .table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    background: white;
+}
+
+#data-sampah table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
+
+#data-sampah thead {
+    background: #15803d;
+    color: white;
+}
+
+#data-sampah th {
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#data-sampah td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+/* EFEK HOVER */
+#data-sampah tbody tr:hover {
+    background: #dcfce7;
+}
+
+/* PERINGKAT PERTAMA */
+#data-sampah .peringkat-utama {
+    background: #f0fdf4;
+    font-weight: bold;
+    color: #166534;
+}
+
+/* KOLOM TOTAL */
+#data-sampah .total-berat {
+    color: #15803d;
+    font-weight: bold;
+}
+
+/* KELAS TIDAK DITEMUKAN */
+#data-sampah .tidak-ditemukan {
+    padding: 25px;
+    color: #dc2626;
+    text-align: center;
+}
+
+/* FOOTER */
+#data-sampah .footer-sampah {
+    text-align: center;
+    margin-top: 20px;
+    color: #15803d;
+    font-size: 13px;
+}
+
+/* RESPONSIVE HP */
+@media screen and (max-width: 600px) {
+
+    #data-sampah {
+        padding: 15px;
+    }
+
+    #data-sampah .header-sampah h2 {
+        font-size: 22px;
+    }
+
+    #data-sampah .search-area {
+        gap: 6px;
+    }
+
+    #data-sampah #resetCari {
+        padding: 0 12px;
+    }
+
+    #data-sampah th,
+    #data-sampah td {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+}
+footer {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            color: #64748b;
+            font-size: 13px;
+        }

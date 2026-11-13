@@ -1,0 +1,170 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1e293b;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            box-shadow: 0 2px 10px #00000010;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #25eb49;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #25eb46;
+        }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f8f4;
+    color: #333;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #16834a, #42b883);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 15px;
+}
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 35px auto;
+}
+
+/* Card */
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border-left: 6px solid #e6ece8;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    color: #16834a;
+    margin-bottom: 18px;
+}
+
+.card p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Item pelajaran */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f0f8f2;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.item span {
+    font-size: 30px;
+}
+
+.item h3 {
+    color: #218c55;
+    font-size: 17px;
+}
+
+.item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Kesimpulan */
+.pesan {
+    background-color: #d9f2e2;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #27ae60;
+}
+
+.pesan h2 {
+    color: #176b3a;
+    margin-bottom: 10px;
+}
+
+.pesan p {
+    text-align: center;
+}
+
+/* Footer */
+footer {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 23px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .item {
+        align-items: flex-start;
+    }
+}

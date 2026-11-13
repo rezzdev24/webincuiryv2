@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incuiry Project</title>
+    <link rel="stylesheet" href="rangking.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Incuiry project kel 6</div>
+
+        <ul>
+            <li><a href="incuiry2.html">Home</a></li>
+            <li><a href="anggota.html">Anggota</a></li>
+            <li><a href="rangking.html">Ranking</a></li>
+            <li><a href="datasampah.html">Data</a></li>
+        </ul>
+    </nav>
+<section id="data-sampah">
+    <div class="header-sampah">
+        <h2>♻️ Data Sampah</h2>
+        <p>Informasi total sampah berdasarkan kelas</p>
+    </div>
+    <div class="search-area">
+        <div class="search-input">
+            <span>🔍</span>
+            <input
+                type="text"
+                id="cariKelas"
+                placeholder="Cari nama kelas, contoh: DKV 1..."
+            >
+        </div>
+
+        <button id="resetCari" type="button">
+            Reset
+        </button>
+    </div>
+
+    <p id="infoHasil"></p>
+
+    <!-- TABEL DATA -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Kelas / Rombel</th>
+                    <th>Total Sampah</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabelDataSampah"></tbody>
+        </table>
+    </div>
+
+    <div class="footer-sampah">
+        <p>♻️ Mari kurangi sampah dan jaga lingkungan sekolah!</p>
+    </div>
+</section>
+
+<script>
+
+const dataSampah = [
+
+    { kelas: "TJKT 1 - TJKT 3", total: 114.4 },
+
+    { kelas: "PPLG 2 - PPLG 4", total: 92.0 },
+
+    { kelas: "DKV 1 - DKV 3", total: 90.0 },
+
+    { kelas: "PPLG 1 - PPLG 3", total: 86.5 },
+
+    { kelas: "KLN 1 - HTL 1", total: 72.2 },
+
+    { kelas: "TJKT 2 - TJKT 4", total: 60.7 },
+
+    { kelas: "HTL 2 - KLN 2", total: 60.7 },
+
+    { kelas: "PMN 1", total: 54.7 },
+
+    { kelas: "MPLB", total: 31.2 },
+
+    { kelas: "DKV 2 dan PMN 2", total: 10.7 }
+
+];
+
+
+// URUTKAN DARI TERBANYAK
+dataSampah.sort((a, b) => b.total - a.total);
+
+
+// AMBIL ELEMEN HTML
+const inputCari = document.getElementById("cariKelas");
+const tabel = document.getElementById("tabelDataSampah");
+const info = document.getElementById("infoHasil");
+const tombolReset = document.getElementById("resetCari");
+
+
+function formatAngka(angka) {
+    return angka.toLocaleString("id-ID", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+
+function tampilkanData(keyword = "") {
+
+    const kataKunci = keyword
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+
+    const hasil = dataSampah
+        .map((item, index) => ({
+            ...item,
+            peringkat: index + 1
+        }))
+        .filter(item =>
+            item.kelas
+                .toLowerCase()
+                .replace(/[^a-z0-9]/g, "")
+                .includes(kataKunci)
+        );
+
+    // KOSONGKAN TABEL
+    tabel.innerHTML = "";
+
+    // JIKA DATA TIDAK DITEMUKAN
+    if (hasil.length === 0) {
+
+        tabel.innerHTML = `
+            <tr>
+                <td colspan="3" class="tidak-ditemukan">
+                    Kelas tidak ditemukan!
+                </td>
+            </tr>
+        `;
+
+        info.textContent = "Tidak ada kelas yang cocok.";
+        return;
+    }
+
+    // TAMPILKAN DATA
+    hasil.forEach(item => {
+
+        const baris = document.createElement("tr");
+
+        if (item.peringkat === 1) {
+            baris.classList.add("peringkat-utama");
+        }
+
+        baris.innerHTML = `
+            <td>${item.peringkat}</td>
+
+            <td>${item.kelas}</td>
+
+            <td class="total-berat">
+                ${formatAngka(item.total)} kg
+            </td>
+        `;
+
+        tabel.appendChild(baris);
+
+    });
+
+    info.textContent =
+        `Menampilkan ${hasil.length} dari ${dataSampah.length} kelompok kelas`;
+}
+
+
+inputCari.addEventListener("input", function() {
+
+    tampilkanData(this.value);
+
+});
+
+tombolReset.addEventListener("click", function() {
+
+    inputCari.value = "";
+
+    tampilkanData();
+
+    inputCari.focus();
+
+});
+
+tampilkanData();
+
+
+</script>
+<footer>
+    <p>© 2026 | kelompok 6.wajib ngulik</p>
+</body>
+</html>
